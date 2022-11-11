@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  node-p2p-service:
+    image: p2p:v1.0.0
+    container_name: p2p-container
+    build:
+      context: .
+      dockerfile: Imagefile
+    environment:
+      - PORT=80
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/usr/app/src:cached
+      - ./build:/usr/app/build:delegated
