@@ -9,9 +9,9 @@ services:
       dockerfile: Imagefile
       target: deploy
     environment:
-      - PORT=80
+      - PORT=443
     ports:
-      - 80:80
+      - 443:443
     volumes:
       # - ./certs:/usr/app/certs:delegated # not working
       - ./src:/usr/app/src:cached

@@ -26,8 +26,9 @@ function App() {
 
   useEffect(() => {
     peer = new Peer("application2", {
+      secure: true,
       host: "localhost",
-      port: 80,
+      port: 443,
       path: "/p2p",
     });
     peer.on("open", (id) => {
