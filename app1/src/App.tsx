@@ -1,24 +1,34 @@
+import { useEffect } from "react";
 import { Peer } from "peerjs";
 
+let peer: Peer;
+
 function App() {
-  const peer = new Peer("app1", {
-    host: "localhost",
-    port: 80,
-    path: "/peers",
-  });
-  const conn = peer.connect("app1");
-  conn.on("open", () => {
-    conn.send("hi!");
-  });
-  peer.on("connection", (conn) => {
-    conn.on("data", (data) => {
-      // Will print 'hi!'
-      console.log(data);
+  useEffect(() => {
+    peer = new Peer("application1", {
+      host: "localhost",
+      port: 80,
+      path: "/p2p",
     });
-    conn.on("open", () => {
-      conn.send("hello!");
+    peer.on("open", (id) => {
+      console.info(`Peer with identifier ${id} registered for P2P network`);
     });
-  });
+    peer.on("error", (error) => {
+      console.error(error);
+    });
+
+    peer.on("connection", (conn) => {
+      console.log({ conn });
+      conn.on("data", (data) => {
+        console.log("[+] Received data", data);
+        conn.send("[+] ack");
+      });
+    });
+
+    return () => {
+      peer.destroy();
+    };
+  }, []);
 
   return <div className="App">App1</div>;
 }

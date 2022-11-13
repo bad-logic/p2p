@@ -1,4 +1,6 @@
 import url from "node:url";
+import fs from "node:fs";
+import path from "node:path";
 
 import { PeerServer } from "peer";
 
@@ -30,8 +32,19 @@ if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
 
   try {
     const port = parseInt(process.env["PORT"] || "80", 10);
+    // const key = fs
+    //   .readFileSync(path.resolve("certs", "private.key"))
+    //   .toString();
+    // const cert = fs
+    //   .readFileSync(path.resolve("certs", "certificate.crt"))
+    //   .toString();
 
-    const peerServer = PeerServer({ port, path: "/peers" });
+    // p2p/v1/peers => list of connected peers when allow_discovery set to true
+    PeerServer({
+      port,
+      path: "/p2p",
+      allow_discovery: true,
+    });
     console.info(`peer server started at localhost:${port}/peers`);
   } catch (err) {
     console.error("ERROR: ", err);

@@ -13,6 +13,10 @@ build
 dist-ssr
 *.local
 
+certs
+*.key
+*.pem
+*.crt
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

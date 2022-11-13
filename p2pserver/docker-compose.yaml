@@ -7,10 +7,12 @@ services:
     build:
       context: .
       dockerfile: Imagefile
+      target: deploy
     environment:
       - PORT=80
     ports:
       - 80:80
     volumes:
+      # - ./certs:/usr/app/certs:delegated # not working
       - ./src:/usr/app/src:cached
       - ./build:/usr/app/build:delegated
