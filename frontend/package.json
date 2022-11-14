@@ -1,0 +1,21 @@
+{
+  "name": "p2p-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "applications/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.15.0"
+}
