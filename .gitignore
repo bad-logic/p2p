@@ -13,6 +13,9 @@ build
 dist-ssr
 *.local
 
+# turbo
+.turbo
+
 certs
 *.key
 *.pem
