@@ -1,6 +1,6 @@
 ### P2P COMMUNICATION
 
-- App1 and App2 uses p2p communication to communicate with each other.
+- [App1](./frontend/applications/app1/) and [App2](./frontend/applications/app2/) uses p2p communication to communicate with each other.
 - Peerjs server helps establishing connections between these apps.
 
 #### [Backend](./p2pserver/)
@@ -14,6 +14,6 @@
 
 ---
 
-[Peerjs-server](https://github.com/peers/peerjs-server)
-[peerjs](https://peerjs.com/)
+[Peerjs-server](https://github.com/peers/peerjs-server)\
+[peerjs](https://peerjs.com/)\
 [learn more](https://hacks.mozilla.org/2013/07/webrtc-and-the-ocean-of-acronyms/)
