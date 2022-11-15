@@ -12,6 +12,7 @@
   "dependencies": {
     "peerjs": "^1.4.7",
     "ui": "workspace:*",
+    "context": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

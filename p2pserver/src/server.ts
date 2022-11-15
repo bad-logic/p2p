@@ -1,8 +1,8 @@
-import url from "node:url";
-import fs from "node:fs";
-import path from "node:path";
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
 
-import { PeerServer } from "peer";
+import { PeerServer } from 'peer';
 
 if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
   const errorTypes = ["unhandledRejection", "uncaughtException"];
