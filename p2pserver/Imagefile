@@ -41,4 +41,4 @@ COPY --chown=node:node ./src ./src
 
 USER node
 
-CMD ["npm" ,"run", "serve:dev"]cd
+CMD ["npm" ,"run", "serve:dev"]
