@@ -8,7 +8,11 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <button onClick={props.onClick} disabled={props.disabled}>
+    <button
+      className="text-lg border border-slate-300 hover:border-slate-400"
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       {props.text}
     </button>
   );

@@ -29,20 +29,22 @@ function App() {
 
   return (
     <div>
-      App1
+      <h1 className="text-lg">Application 1</h1>
       <Button
         onClick={connect}
         text={
           p2pState.connection
-            ? "Connected to front Facing app"
-            : "Connect to front Facing app"
+            ? "Connected to Application 2"
+            : "Connect to Application 2"
         }
         disabled={p2pState.connection ? true : false}
       />
-      <div>
-        <MessageBox value={message} onChange={updateMessage} />
-        <Button text="sendMessage" onClick={send} />
-      </div>
+      {p2pState.connection && (
+        <div>
+          <MessageBox value={message} onChange={updateMessage} />
+          <Button text="sendMessage" onClick={send} />
+        </div>
+      )}
     </div>
   );
 }

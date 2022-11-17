@@ -11,7 +11,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "tsconfig": "workspace:*",
-    "@types/react": "^18.0.25"
+    "@types/react": "^18.0.25",
+    "tsconfig": "workspace:*"
   }
 }
