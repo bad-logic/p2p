@@ -9,7 +9,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button
-      className="text-lg border border-slate-300 hover:border-slate-400"
+      className="p-2 rounded-full border border-slate-300 hover:border-slate-400"
       onClick={props.onClick}
       disabled={props.disabled}
     >

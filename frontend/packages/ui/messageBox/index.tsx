@@ -9,6 +9,7 @@ export const MessageBox: React.FC<MessageProps> = (props) => {
   return (
     <>
       <input
+        className="m-2 border border-slate-300 hover:border-slate-400"
         type="text"
         value={props.value}
         onChange={(e) => {
