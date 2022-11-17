@@ -28,17 +28,15 @@ function App() {
   };
 
   return (
-    <div>
-      <h1 className="text-lg">Application 1</h1>
-      <Button
-        onClick={connect}
-        text={
-          p2pState.connection
-            ? "Connected to Application 2"
-            : "Connect to Application 2"
-        }
-        disabled={p2pState.connection ? true : false}
-      />
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-row gap-3">
+        <h1 className="text-lg">Application 1</h1>
+        <Button
+          onClick={connect}
+          text={p2pState.connection ? "Connected" : "Connect to Application 2"}
+          disabled={p2pState.connection ? true : false}
+        />
+      </div>
       {p2pState.connection && (
         <div>
           <MessageBox value={message} onChange={updateMessage} />
