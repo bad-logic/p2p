@@ -154,6 +154,9 @@ const PeerProvider = ({ children, type, p2pId }: PeerProviderProps) => {
       // });
       state.peer.on("error", (error) => {
         console.error(error);
+        dispatch({
+          type: "DESTROY",
+        });
       });
 
       state.peer.on("connection", (conn) => {
